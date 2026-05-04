@@ -10,19 +10,19 @@ DEBUG = config("DEBUG", default=False, cast=bool)
 
 ALLOWED_HOSTS = config(
     "ALLOWED_HOSTS",
-    default="localhost,127.0.0.1,playto-payout-engine-8.onrender.com",
+    default="localhost,127.0.0.1",
     cast=lambda v: [host.strip() for host in v.split(",") if host.strip()],
 )
 
 CSRF_TRUSTED_ORIGINS = config(
     "CSRF_TRUSTED_ORIGINS",
-    default="https://playto-payout-engine-8.onrender.com",
+    default="http://localhost:5173,http://127.0.0.1:5173,http://localhost:3000,http://127.0.0.1:3000",
     cast=lambda v: [origin.strip() for origin in v.split(",") if origin.strip()],
 )
 
 CORS_ALLOWED_ORIGINS = config(
     "CORS_ALLOWED_ORIGINS",
-    default="http://localhost:3000,http://127.0.0.1:3000,http://localhost:5173,http://127.0.0.1:5173,https://playto-payout-engine-8.onrender.com",
+    default="http://localhost:3000,http://127.0.0.1:3000,http://localhost:5173,http://127.0.0.1:5173",
     cast=lambda v: [origin.strip() for origin in v.split(",") if origin.strip()],
 )
 
